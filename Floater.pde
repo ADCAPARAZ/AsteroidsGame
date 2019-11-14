@@ -47,7 +47,7 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
       myCenterY = height;    
     }   
   }   
-  public void show ()  //Draws the floater at the current position  
+  public void show()  //Draws the floater at the current position  
   {             
     fill(myColor);   
     stroke(myColor);    

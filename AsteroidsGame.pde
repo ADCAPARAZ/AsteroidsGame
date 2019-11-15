@@ -11,8 +11,8 @@ public void setup()
 public void draw() 
 {
   background(0);
+  bob.move();
   bob.show();
-  System.out.println(bob.myCenterX);
   for(int i =0; i < night.length; i++){
   	night[i].show();
   }
@@ -23,4 +23,20 @@ public void keyPressed()
 	{
 		bob.setDirectionX(0);
 	}
+  if(key == 'w')
+  {
+    bob.accelerate(2);
+  }
+  if(key == 's')
+  {
+    bob.accelerate(-2);
+  }
+  if(key == 'a')
+  {
+    bob.turn(-5);
+  }
+  if(key == 'd')
+  {
+    bob.turn(5);
+  }
 }

@@ -17,14 +17,14 @@ public void setup()
 public void draw() 
 {
   background(0);
-  for(int i = 0; i< 5; i++){
-  	asteroids.get(i).show();
-  	asteroids.get(i).move();
+   for(int i =0; i < night.length; i++){
+  	night[i].show();
   }
   bob.move();
   bob.show();
-  for(int i =0; i < night.length; i++){
-  	night[i].show();
+  for(int i = 0; i < 10; i++){
+  	asteroids.get(i).show();
+  	asteroids.get(i).move();
   }
 }
 public void keyPressed()
@@ -35,11 +35,11 @@ public void keyPressed()
 	}
   if(key == 'w')
   {
-    bob.move(2);
+    bob.accelerate(0.2);
   }
   if(key == 's')
   {
-    bob.accelerate(-1.2);
+    bob.accelerate(-0.2);
   }
   if(key == 'a')
   {

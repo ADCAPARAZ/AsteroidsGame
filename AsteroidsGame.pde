@@ -24,6 +24,8 @@ public void draw()
   bob.show();
   for(int i = 0; i < 10; i++){
   	asteroids.get(i).show();
+  }
+  for(int i = 0; i < 10; i++){
   	asteroids.get(i).move();
   }
 }
@@ -43,10 +45,10 @@ public void keyPressed()
   }
   if(key == 'a')
   {
-    bob.turn(-5);
+    bob.turn(-7);
   }
   if(key == 'd')
   {
-    bob.turn(5);
+    bob.turn(7);
   }
 }

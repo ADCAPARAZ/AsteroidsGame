@@ -3,7 +3,7 @@
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 Star[] night = new Star[200];
 Spaceship bob = new Spaceship();
-Bullet pew = new Bullet();
+ArrayList <Bullet> pew = new ArrayList <Bullet>();
 public void setup() 
 {
   size(500,500);
@@ -14,6 +14,10 @@ public void setup()
   	Asteroid a = new Asteroid();
   	asteroids.add(a);
   }
+  for(int i = 0; i < 10; i++){
+  	Bullet b = new Bullet();
+  	pew.add(b);
+  }
 }
 public void draw() 
 {
@@ -23,7 +27,9 @@ public void draw()
   }
   bob.move();
   bob.show();
-  pew.show();
+  for(int i = 0; i < 10; i++){
+  	pew.get(i).show();
+  }
   for(int i = 0; i < 10; i++){
   	asteroids.get(i).show();
   }

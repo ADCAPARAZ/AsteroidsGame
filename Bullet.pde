@@ -6,10 +6,13 @@ class Bullet extends Floater
 		myCenterY = 250;
 		double dRadians = myPointDirection*(Math.PI/180);
 		myPointDirection = 0;
-		double myDirectionX = (5 * Math.cos(dRadians) + bob.myDirextionX);
-		double myDirectionY = 5 * Math.sin(dRadians) + bob.myDirectionY;
+		myDirectionX = 5 * Math.cos(dRadians) + bob.myDirectionX;
+		myDirectionY = 5 * Math.sin(dRadians) + bob.myDirectionY;
+		myColor = color(0,0,255);
 	}
 	public void show(){
-		super.show();
+		ellipse((int)myCenterX,(int)myCenterY,7,7);
+		fill(255,0,0);
+		stroke(255,0,0);
 	}
 }

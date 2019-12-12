@@ -10,13 +10,9 @@ public void setup()
   for(int i = 0; i < night.length; i++){
   	night[i] = new Star();
   }
-  for(int i = 0; i < 200; i++){
+  for(int i = 0; i < 15; i++){
   	Asteroid a = new Asteroid();
   	asteroids.add(a);
-  }
-  for(int i = 0; i < 10; i++){
-  	Bullet b = new Bullet();
-  	pew.add(b);
   }
 }
 public void draw() 
@@ -27,16 +23,20 @@ public void draw()
   }
   bob.move();
   bob.show();
-  for(int i = 0; i < 10; i++){
-  	pew.get(i).show();
-  }
-  for(int i = 0; i < 10; i++){
+
+  for(int i = 0; i < asteroids.size(); i++){
   	asteroids.get(i).show();
   }
-  for(int i = 0; i < 10; i++){
+  for(int i = 0; i < asteroids.size(); i++){
   	asteroids.get(i).move();
   }
-}
+  for(int i = 0; i < pew.size(); i++){
+  	pew.get(i).move();
+  }
+  for(int i = 0; i < pew.size(); i++){
+  	pew.get(i).show();
+  }
+ }
 public void keyPressed()
 {
 	if(key == 'h')
@@ -45,11 +45,11 @@ public void keyPressed()
 	}
   if(key == 'w')
   {
-    bob.accelerate(0.2);
+    bob.accelerate(0.4);
   }
   if(key == 's')
   {
-    bob.accelerate(-0.2);
+    bob.accelerate(-0.4);
   }
   if(key == 'a')
   {
@@ -58,5 +58,10 @@ public void keyPressed()
   if(key == 'd')
   {
     bob.turn(7);
+  }
+  if(key == ' ')
+  {
+  	Bullet b = new Bullet();
+  	pew.add(b);
   }
 }

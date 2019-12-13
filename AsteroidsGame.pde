@@ -36,6 +36,14 @@ public void draw()
   for(int i = 0; i < pew.size(); i++){
   	pew.get(i).show();
   }
+  for(int i = 0; i < asteroids.size(); i++){
+  	for(int j = 0; j < pew.size(); j++){
+  		if(dist(asteroids.get(i).getX(), asteroids.get(i).getY(), pew.get(j).getX(), pew.get(j).getY()) < 20){
+  			asteroids.remove(i);
+  			pew.remove(j);
+  		}
+  	}
+  }
  }
 public void keyPressed()
 {

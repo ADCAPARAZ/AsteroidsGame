@@ -15,4 +15,44 @@ class Bullet extends Floater
 		fill(255,0,0);
 		stroke(255,0,0);
 	}
+	public void move(){
+    //change the x and y coordinates by myDirectionX and myDirectionY       
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;     
+
+    //wrap around screen    
+    if(myCenterX > width)
+    {     
+      for(int i = 0; i < pew.size(); i++){
+      	pew.remove(i);
+      }    
+    }    
+    else if (myCenterX<0)
+    {     
+      for(int i = 0; i < pew.size(); i++){
+      	pew.remove(i);
+      }        
+    }    
+    if(myCenterY >height)
+    {    
+      for(int i = 0; i < pew.size(); i++){
+      	pew.remove(i);
+      }     
+    } 
+    
+    else if (myCenterY < 0)
+    	{     
+      		for(int i = 0; i < pew.size(); i++){
+      			pew.remove(i);
+      		}     
+    	}   
+	}
+
+	public int getX(){
+		return (int) myCenterX;
+	}
+
+	public int getY(){
+		return (int) myCenterY;
+	}
 }
